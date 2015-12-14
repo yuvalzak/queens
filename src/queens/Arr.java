@@ -23,7 +23,12 @@ class Arr   {
 		}
 		return sb.toString();
 	}
-
+	
+    public Boolean getArr(int x, int y){
+    	if(arr[x][y] == 1) { return true;}
+    	return false;
+    }
+    
 	public int[][] getArr() {
 		return arr;
 	}
