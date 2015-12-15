@@ -25,6 +25,7 @@ class Arr   {
 	}
 	
     public Boolean getArr(int x, int y){
+    	// if((x<0 || x > size -1) || (y<0 || y > size -1)) { return true; }
     	if(arr[x][y] == 1) { return true;}
     	return false;
     }

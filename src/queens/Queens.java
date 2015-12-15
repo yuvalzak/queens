@@ -1,7 +1,5 @@
 package queens;
 
-import java.awt.Dimension;
-import java.util.Arrays;
 
 public class Queens {
 	static int ArrSize = 8;
@@ -25,14 +23,23 @@ public class Queens {
 
 
 	private static Boolean itsAGoodPlace(int x, int y, Arr queenArr){
-		if (checkDiagonals(x,y, queenArr)  && checkRows(x,y, queenArr)){
+		if (  checkRows(x,y, queenArr) && checkDiagonals(x,y, queenArr)   ){
 			return true;	} else {
 				return false;
 			}
 	}
 	private static Boolean checkDiagonals(int x, int y , Arr queenArr){
-
-		return true;
+		// something not good in diagonals !!
+		////////////////////////////////////////
+	 	 for (int xx = 0; xx < x; xx++){
+	 		   
+	    	if( ( y- ( x -xx  )>-1) &&   queenArr.getArr(xx,  y- ( x -xx  ) )  ) {
+	    	 	  return false;
+	     	  }   if( y+ ( x -xx  )< ArrSize   &&   queenArr.getArr(xx,    y+ ( x -xx  ) )     ) {
+	    		  return false;
+	    	  } 
+	       } 
+	return true;
 	}
 
 	private static Boolean checkRows(int x, int y , Arr queenArr){
