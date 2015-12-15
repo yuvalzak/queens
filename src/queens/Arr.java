@@ -1,5 +1,6 @@
 package queens;
 
+
 class Arr   {
 	int[][] arr = null;
 	int size ;
@@ -12,24 +13,46 @@ class Arr   {
 		size = arrSize;
 	}
 
+	public int getPlace(int x){
+		int y;
+		for(  y = 0 ; y<size; y++){
+			if(arr[x][y] == 1){ return y ; }	
+		}
+		return 0;
+		// did not find,  so for now this is good.
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
+		String p1 = "[Q]";
+		String p0 = "[ ]";
 		for ( int i = 0; i< size; i++) {
 			sb = sb.append("\n");
 			for (int j =0; j< size; j++){
-				sb = sb.append("[" + arr[i][j]+ "]");	
+				if(arr[i][j]==1) {sb = sb.append(p1);}
+				else{
+					sb = sb.append(p0);	
+				}
+
 			}
 		}
 		return sb.toString();
 	}
-	
-    public Boolean getArr(int x, int y){
-    	// if((x<0 || x > size -1) || (y<0 || y > size -1)) { return true; }
-    	if(arr[x][y] == 1) { return true;}
-    	return false;
-    }
-    
+
+	public void print(){
+
+
+		System.out.println(this.toString());
+	}
+
+
+
+	public Boolean getArr(int x, int y){
+		if(arr[x][y] == 1) { return true;}
+		return false;
+	}
+
 	public int[][] getArr() {
 		return arr;
 	}
@@ -39,6 +62,13 @@ class Arr   {
 
 	public void setArr(int x, int y, int v) {
 		this.arr[x][y] = v;
+		/* try {
+
+		 	//Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} */
 	}
 
 }	
