@@ -30,19 +30,17 @@ class Arr   {
 		for ( int i = 0; i< size; i++) {
 			sb = sb.append("\n");
 			for (int j =0; j< size; j++){
-				if(arr[i][j]==1) {sb = sb.append(p1);}
+				if(arr[j][i]==1) {sb = sb.append(p1);}
+				// it print not intiutivly, so i changed the x , y
 				else{
 					sb = sb.append(p0);	
 				}
-
 			}
 		}
 		return sb.toString();
 	}
 
 	public void print(){
-
-
 		System.out.println(this.toString());
 	}
 

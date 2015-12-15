@@ -2,10 +2,10 @@ package queens;
 
 
 public class Queens {
-	static int ArrSize = 10;
+	static int ArrSize = 8;
 	public static void main(String[] args) {
 		Arr queenArr = new Arr(ArrSize);
-		queenArr =  FindQueenPositions(queenArr, 0 , 0 );
+		queenArr =  FindQueenPositions(queenArr, 0 , 7);
 		System.out.println(queenArr.toString());
 
 	}
